@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,7 +30,17 @@ import java.util.List;
  * A placeholder fragment containing a simple view.
  */
 public class ForecastFragment extends Fragment {
-    private final String TAG = FeftchWeatherTask.class.getSimpleName();
+    private final String TAG = ForecastFragment.class.getSimpleName();
+
+    public ForecastFragment() {
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -51,18 +63,18 @@ public class ForecastFragment extends Fragment {
                 "Sun - Sunny - 88 / 63"
         };
 
-        try {
-            JSONObject weatherJson = new JSONObject(getWeatherData());
-            JSONArray weatherJsonArray = weatherJson.getJSONArray("list");
-            for (int i = 0; i < weatherJsonArray.length(); i++) {
-                JSONObject oneObject = weatherJsonArray.getJSONObject(i);
-                String oneObjectsItem = oneObject.getString("STRINGNAMEinTHEarray");
-                String oneObjectsItem2 = oneObject.getString("anotherSTRINGNAMEINtheARRAY");
-            }
-        } catch (JSONException e) {
-            Log.e(TAG, "Error when parsing JSON", e);
-            e.printStackTrace();
-        }
+//        try {
+////            JSONObject weatherJson = new JSONObject(getWeatherData());
+////            JSONArray weatherJsonArray = weatherJson.getJSONArray("list");
+////            for (int i = 0; i < weatherJsonArray.length(); i++) {
+////                JSONObject oneObject = weatherJsonArray.getJSONObject(i);
+////                String oneObjectsItem = oneObject.getString("STRINGNAMEinTHEarray");
+////                String oneObjectsItem2 = oneObject.getString("anotherSTRINGNAMEINtheARRAY");
+////            }
+//        } catch (JSONException e) {
+//            Log.e(TAG, "Error when parsing JSON", e);
+//            e.printStackTrace();
+//        }
 
         List<String> weekForecast = new ArrayList<String>(Arrays.asList(forecastArray));
 
@@ -74,10 +86,18 @@ public class ForecastFragment extends Fragment {
         return rootView;
     }
 
-    public class FeftchWeatherTask extends AsyncTask<Void, Void, Void> {
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        inflater.inflate(R.menu.forecast_fragment, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    public class FetchWeatherTask extends AsyncTask<Void, Void, Void> {
+
+        private final String TAG = FetchWeatherTask.class.getSimpleName();
 
         @Override
-        protected void doInBackground(Void... params) {
+        protected Void doInBackground(Void... params) {
             // These two need to be declared outside the try/catch
             // so that they can be closed in the finally block.
             HttpURLConnection urlConnection = null;
@@ -135,7 +155,7 @@ public class ForecastFragment extends Fragment {
                     }
                 }
             }
-            return forecastJsonStr;
+            return null;
         }
     }
 }
