@@ -3,5 +3,28 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="action_refresh">Refresh</string>
+    <string name="action_map">Map location</string>
+    <string name="action_share">Share</string>
     <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="weather_base_uri">http://api.openweathermap.org/data/2.5/forecast/daily</string>
+
+    <!-- Strings related to Settings -->
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_location">Location (zip)</string>
+    <string name="pref_location_default" translatable="false">4885,no</string>
+    <string name="pref_location_key" translatable="false">location</string>
+    <string name="pref_display_units_dialog_title">Temperature unit</string>
+    <string name="pref_display_units_title">Temperature units</string>
+    <string name="pref_display_units_key" translatable="false">units</string>
+    <string name="pref_display_unit_metric">metric</string>
+    <string name="pref_display_unit_imperial">imperial</string>
+    <string-array name="pref_display_unit_entries">
+        <item>@string/pref_display_unit_metric</item>
+        <item>@string/pref_display_unit_imperial</item>
+    </string-array>
+    <string-array name="pref_display_unit_values">
+        <item>Metric</item>
+        <item>Imperial</item>
+    </string-array>
 </resources>
