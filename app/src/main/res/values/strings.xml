@@ -14,14 +14,14 @@
     <string name="pref_location">Location (zip)</string>
     <string name="pref_location_default" translatable="false">4885,no</string>
     <string name="pref_location_key" translatable="false">location</string>
-    <string name="pref_display_units_dialog_title">Temperature unit</string>
-    <string name="pref_display_units_title">Temperature units</string>
-    <string name="pref_display_units_key" translatable="false">units</string>
-    <string name="pref_display_unit_metric">metric</string>
-    <string name="pref_display_unit_imperial">imperial</string>
+    <string name="pref_units_dialog_title">Temperature unit</string>
+    <string name="pref_units_title">Temperature units</string>
+    <string name="pref_units_key" translatable="false">units</string>
+    <string name="pref_units_metric">metric</string>
+    <string name="pref_units_imperial">imperial</string>
     <string-array name="pref_display_unit_entries">
-        <item>@string/pref_display_unit_metric</item>
-        <item>@string/pref_display_unit_imperial</item>
+        <item>@string/pref_units_metric</item>
+        <item>@string/pref_units_imperial</item>
     </string-array>
     <string-array name="pref_display_unit_values">
         <item>Metric</item>

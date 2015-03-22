@@ -7,9 +7,9 @@
         android:singleLine="true" />
 
     <ListPreference
-        android:title="@string/pref_display_units_title"
-        android:dialogTitle="@string/pref_display_units_dialog_title"
-        android:key="@string/pref_display_units_key"
+        android:title="@string/pref_units_title"
+        android:dialogTitle="@string/pref_units_dialog_title"
+        android:key="@string/pref_units_key"
         android:entries="@array/pref_display_unit_values"
         android:entryValues="@array/pref_display_unit_entries" />
 </PreferenceScreen>
